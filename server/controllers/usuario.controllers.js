@@ -12,3 +12,17 @@ export const registro = async (req, res) => {
     console.log(error);
   }
 };
+
+export const login = async (req,res) =>{
+const {correo, contraseña} = req.body
+
+try {
+  const [result] = await pool.query(
+    "SELECT * FROM usuario WHERE correo = ? and contraseña = ?", [correo,contraseña]
+  )
+  return res.json("logg")
+} catch (error) {
+ console.log(error); 
+}
+
+}

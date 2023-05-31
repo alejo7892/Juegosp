@@ -101,8 +101,7 @@ const Registro = () => {
               width :'100%',
               border: "none",
               padding: "9px",
-              width: "100px",
-              color: "gray",
+              color: "grey",
             }}
           >
             enviar

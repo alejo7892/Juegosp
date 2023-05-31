@@ -1,14 +1,30 @@
-
-
+import { useState } from "react";
+import App from "../../App";
+import Registro from "../Registro";
 const Catalogo = () => {
+    const [form,setForm] = useState("")
+
+    switch (form) {
+        case "Inicio":
+        return <App/>     
+            
+    
+        default:
+            break;
+    }
      return (
 
-    
+        
+ 
+
         <div class="container">
         <nav>
             <span class="logo">JUEGOSPICHA</span>
             <ul>
-                <li>INICIO</li>
+                <li
+                onClick={() => setForm("Inicio")}
+                
+                >INICIO</li>
                 <li>Mi carrito</li>
                 <li>Mis juegos</li>
                 

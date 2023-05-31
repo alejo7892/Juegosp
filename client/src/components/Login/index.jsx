@@ -1,4 +1,17 @@
+import { useState } from "react";
+import { Loginus } from "../../../API";
 const Login = () => {
+  const [correo,setCorreo]= useState("")
+  const [contraseña,setContraseña]= useState("") 
+    const iniciarsesion = async () => {
+      e.preventDefault()
+      const response = await Loginus({
+        correo: correo,
+        contraseña: contraseña 
+      })
+
+    }
+
     return (
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
    
@@ -13,7 +26,7 @@ const Login = () => {
   
           }}
         >
-          <form style={{textAlign:'center'}}>
+          <form onSubmit={iniciarsesion} style={{textAlign:'center'}}>
           <h1 style={{ color: "white", fontFamily: "revert" }}>Login</h1>
           <br /><br />
             <input
@@ -27,6 +40,8 @@ const Login = () => {
                 border: "1px solid #aaa",
                 margin: "5px",
               }}
+              value={correo}
+              onClick={(event) => setCorreo(event.target.value)}
               
             />
             <br /><br /><br />
@@ -41,7 +56,8 @@ const Login = () => {
                 border: "1px solid #aaa ",
                 margin: "5px",
               }}
-             
+              value={contraseña}
+             onClick={(event) => setContraseña(event.target.value)}
             />
             <br />
             <br /> <br />
