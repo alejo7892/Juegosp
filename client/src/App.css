@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html{
   font-size: 62.5%;
 }
@@ -17,6 +18,17 @@ html{
 .containerLo{
   width: 100%;
   height: 100vh;
+  background-color: #C4C4C4;
+  font-family: 'Share Tech', sans-serif;
+  min-width: 1200px;
+  position: relative; 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.containerRe{
+  width: 100%;
+  height: 100%;
   background-color: #C4C4C4;
   font-family: 'Share Tech', sans-serif;
   min-width: 1200px;

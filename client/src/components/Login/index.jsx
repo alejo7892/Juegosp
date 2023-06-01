@@ -3,7 +3,9 @@ import { Loginus } from "../../../API";
 import App from "../../App";
 import Registro from "../Registro";
 import Catalogo from "../catalogo";
+import Cookie from "universal-cookie"
 const Login = () => {
+  const cookie= new Cookie();
   const [correo,setCorreo]= useState("")
   const [contraseña,setContraseña]= useState("") 
   const [form,setForm] = useState("")
@@ -27,18 +29,25 @@ const Login = () => {
         correo: correo,
         contraseña: contraseña 
       })
-      if (response.data[0] != 0) {
-        alert("logeado")
-      }
-      else{
-        alert("no existe por favor registrese")
-      }
+      if (response.data[0].correo == correo) {
+        
+      alert("logueado owowowowowow")
+     cookie.set("NombreCookie",response.data[0].correo, {path : '/'});
+     cookie.set('numeroCookie', response.data[0].numero, {path : '/'});
+    cookie.set('nombreCookie', response.data[0].nombre, {path : '/'});
+    
+    
+      
+  }
+  else{
+    alert("Usuario o contraseña incorrecta")
+  } 
     }
 
     return (
 
-      <div>
       <div className="containerLo">
+      <div className="containerRe">
       <nav>
             <span class="logo">JUEGOSPICHA</span>
             <ul>
@@ -52,17 +61,17 @@ const Login = () => {
             </ul>
         </nav>
         </div>
-        <div >
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
         
         <div
           style={{
             background: "#50505a",
             width: "17%",
+            height: "20%",
             padding: "45px",
             position: "relative",
-            top :'-500px'
-  
+            top :'-800px',
+            margin: '100px'
           }}
         >
           <form onSubmit={iniciarsesion} style={{textAlign:'center'}}>
@@ -113,9 +122,10 @@ const Login = () => {
               enviar
             </button>
           </form>
+          
         </div>
       </div>
-      </div>
+      
       </div>
     );
   };

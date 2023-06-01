@@ -5,6 +5,7 @@ import App from "../../App";
 const Registro = () => {
   const [nombreU, setNombre]= useState("")
   const [numeroU, setNumero]= useState("")
+  const [profesionU, setProfesion]= useState("")
   const [correoU, setCorreo]= useState("")
   const [contraseñaU, setContraseña]= useState("")
   const [form,setForm] = useState("")
@@ -29,6 +30,7 @@ const Registro = () => {
   const response = await registrous({
     nombre: nombreU,
     numero : numeroU,
+    profesion: profesionU,
     correo : correoU,
     contraseña: contraseñaU  
   })
@@ -51,6 +53,7 @@ const Registro = () => {
                 
             </ul>
         </nav>
+        {/* </div> */}
         </div>
     <div style={{ width: "100%", display: "flex", justifyContent: "center", background: '' }}>
  
@@ -96,6 +99,20 @@ const Registro = () => {
             }}
             value={numeroU}
             onChange={(event) => setNumero(event.target.value)}
+          />
+          <br /><br />
+          <input
+            type="text"
+            id="email"
+            placeholder="ingrese su profesion"
+            style={{
+              padding: "10px",
+              width :'100%',
+              border: " solid 1px #aaa",
+              margin: "5px",
+            }}
+            value={profesionU}
+            onChange={(event) => setProfesion(event.target.value)}
           />
           <br /><br />
           <input

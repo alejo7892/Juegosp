@@ -1,13 +1,25 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Registro from './components/Registro'
 import Login from './components/Login'
 import Catalogo from './components/catalogo'
-
+import  Cookie  from 'universal-cookie'
 
 function App() {
   const [count, setCount] = useState(0)
   const [form, setForm]= useState("Inicio")
+  const [nombre,setNombre]= useState("")
+  const cookie= new Cookie();
+  const usuario = cookie.get('NombreCookie')
+  useEffect(()=>{
+  
+    setNombre(cookie.get('nombreCookie'))
+    
+    
+    
+    },[nombre])
+
+
   switch (form) {
     case "Inicio":
         return <div class="container">
@@ -17,13 +29,18 @@ function App() {
                 <li
                 onClick={() => setForm("Inicio")}
                 >INICIO</li>
-                <li
-                onClick={() => setForm("Iniciar sesion")}
-                >Iniciar sesion</li>
-                <li
-                onClick={() => setForm("Registro")} 
-                >Registrarse</li>
-                <li onClick={() =>setForm("Juegos")}>Juegos</li>
+                {nombre== '' || nombre == undefined ?
+                <>
+                 <li
+                 onClick={() => setForm("Iniciar sesion")}
+                 >Iniciar sesion</li> <li
+                 onClick={() => setForm("Registro")} 
+                 >Registrarse</li> </> : <li onClick={() =>setForm("Juegos")}>Juegos</li>
+              }
+               
+               
+                
+                
             </ul>
         </nav>
         <header>
