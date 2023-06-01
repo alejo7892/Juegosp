@@ -1,28 +1,67 @@
 import { useState } from "react";
 import { Loginus } from "../../../API";
+import App from "../../App";
+import Registro from "../Registro";
+import Catalogo from "../catalogo";
 const Login = () => {
   const [correo,setCorreo]= useState("")
   const [contraseña,setContraseña]= useState("") 
-    const iniciarsesion = async () => {
+  const [form,setForm] = useState("")
+ 
+  switch (form) {
+    case "Inicio":
+      return <App/>
+    case "Registro":
+      return <Registro/>
+
+      case "Juegos":
+        return <Catalogo/>     
+  
+    default:
+      break;
+  }
+
+  const iniciarsesion = async (e) => {
       e.preventDefault()
       const response = await Loginus({
         correo: correo,
         contraseña: contraseña 
       })
-
+      if (response.data[0] != 0) {
+        alert("logeado")
+      }
+      else{
+        alert("no existe por favor registrese")
+      }
     }
 
     return (
+
+      <div>
+      <div className="containerLo">
+      <nav>
+            <span class="logo">JUEGOSPICHA</span>
+            <ul>
+                <li
+                onClick={() => setForm("Inicio")}
+                >INICIO</li>
+                <li
+                onClick={() => setForm("Registro")} 
+                >Registrarse</li>
+                
+            </ul>
+        </nav>
+        </div>
+        <div >
       <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-   
+        
         <div
           style={{
             background: "#50505a",
             width: "17%",
             padding: "45px",
-            
             position: "relative",
-            top :'200px'
+            top :'-500px'
   
           }}
         >
@@ -41,7 +80,7 @@ const Login = () => {
                 margin: "5px",
               }}
               value={correo}
-              onClick={(event) => setCorreo(event.target.value)}
+              onChange={(event) => setCorreo(event.target.value)}
               
             />
             <br /><br /><br />
@@ -57,7 +96,7 @@ const Login = () => {
                 margin: "5px",
               }}
               value={contraseña}
-             onClick={(event) => setContraseña(event.target.value)}
+             onChange={(event) => setContraseña(event.target.value)}
             />
             <br />
             <br /> <br />
@@ -75,6 +114,8 @@ const Login = () => {
             </button>
           </form>
         </div>
+      </div>
+      </div>
       </div>
     );
   };

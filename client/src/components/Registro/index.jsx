@@ -1,11 +1,28 @@
 import { useState } from "react";
 import { registrous } from "../../../API";
+import Login from "../Login";
+import App from "../../App";
 const Registro = () => {
   const [nombreU, setNombre]= useState("")
   const [numeroU, setNumero]= useState("")
   const [correoU, setCorreo]= useState("")
   const [contraseñaU, setContraseña]= useState("")
+  const [form,setForm] = useState("")
  
+  switch (form) {
+    case "Inicio":
+      return <App/>
+    case "Iniciar sesion":
+      return <Login/>
+
+      case "Juegos":
+        return <Catalogo/>     
+  
+    default:
+      break;
+  }  
+
+
   const reg = async(e) =>{
   e.preventDefault()
 
@@ -19,7 +36,23 @@ const Registro = () => {
   
 
   return (
-    <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+    
+    <div className="containerLo">
+      <div >
+      <nav>
+            <span class="logo">JUEGOSPICHA</span>
+            <ul>
+                <li
+                onClick={() => setForm("Inicio")}
+                >INICIO</li>
+                <li
+                onClick={() => setForm("Iniciar sesion")} 
+                >Iniciar sesion</li>
+                
+            </ul>
+        </nav>
+        </div>
+    <div style={{ width: "100%", display: "flex", justifyContent: "center", background: '' }}>
  
       <div
         style={{
@@ -108,6 +141,7 @@ const Registro = () => {
           </button>
         </form>
       </div>
+    </div>
     </div>
   );
 };

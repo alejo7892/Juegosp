@@ -18,11 +18,18 @@ const {correo, contraseña} = req.body
 
 try {
   const [result] = await pool.query(
-    "SELECT * FROM usuario WHERE correo = ? and contraseña = ?", [correo,contraseña]
+    "SELECT * FROM usuario WHERE correo = ? AND contraseña = ?", [correo,contraseña]
   )
-  return res.json("logg")
+  if (result.length !=0) {
+    return res.json("logeado")
+    }else{
+    return res.json("No logueado")
+    }
+    
+ 
 } catch (error) {
- console.log(error); 
+ 
 }
 
 }
+console.log("correo");

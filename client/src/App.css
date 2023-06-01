@@ -14,6 +14,14 @@ html{
   min-width: 1200px;
   position: relative;
 }
+.containerLo{
+  width: 100%;
+  height: 100vh;
+  background-color: #C4C4C4;
+  font-family: 'Share Tech', sans-serif;
+  min-width: 1200px;
+  position: relative; 
+}
 .logo{
   font-weight: 600;
   font-size: 3.8rem;
