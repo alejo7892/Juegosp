@@ -1,11 +1,22 @@
 import { useState } from "react"
 import { Crearjuegos } from "../../../API"
+import App from "../../App"
+import Catalogo from "../catalogo"
 const Cjuegos =  () =>{
     const [imagenC, setImagen]= useState("")
     const [tituloC, setTitulo]= useState("")
     const [descripcionC, setDescripcion]= useState("")
     const [precioC, setPrecio]= useState("")
-
+    const [form,setForm]= useState("")
+    switch (form) {
+      case "Inicio":
+      return <App/>
+    
+      case "Juegos":
+      return <Catalogo/>        
+      default:
+        break;
+    }
 
 
     const crej = async(e) =>{
@@ -31,7 +42,7 @@ const Cjuegos =  () =>{
                   onClick={() => setForm("Inicio")}
                   >INICIO</li>
                   <li
-                  onClick={() => setForm("Iniciar sesion")} 
+                  onClick={() => setForm("Juegos")} 
                   >Juegos</li>
                   
               </ul>

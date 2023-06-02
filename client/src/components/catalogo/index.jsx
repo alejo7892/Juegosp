@@ -33,7 +33,7 @@ const Catalogo = () => {
 
         <>
 
-<div class="container">
+<div class="containerLo">
         <nav>
             <span class="logo">JUEGOSPICHA</span>
             <ul>
@@ -55,7 +55,7 @@ const Catalogo = () => {
             
         <div key={i} className="cards">
         <div   style={{display:'flex',}}>
-                <div  style={{border:'3px solid gray',width:'12%',height:'22%',padding:'10px',margin:'100px'}}>
+                <div  style={{border:'3px solid gray',width:'22%',height:'320%',padding:'10px',margin:'100px', position:'relative', top:'20px'}}>
                 <img src={users.imagen} alt="" style={{width:'100%',height : '100%'}}/>
                 <h1 style={{color:'blue'}}>{users.title}</h1> 
                 <h3>{users.descripcion}</h3>
