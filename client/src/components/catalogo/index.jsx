@@ -54,7 +54,7 @@ const Catalogo = () => {
 
 <div class="containerLo">
         <nav>
-            <span class="logo">JUEGOSPICHA</span>
+            <span class="logo">JUEGOSPE</span>
             <ul>
                 <li
                 onClick={() => setForm("Inicio")}
@@ -72,8 +72,8 @@ const Catalogo = () => {
         </div>
         
         {users.length != 0 ? (
-        users.map((users,i)=>{
-        
+        users.map((users)=>{
+      
         return(
 
         <div key={users.id} className="cards">
@@ -82,7 +82,7 @@ const Catalogo = () => {
                 <img src={users.imagen} alt="" style={{height: '40%',width:'40%'}} />
                 <h1 style={{color:'black'}}>{users.title}</h1> 
                 <h3>{users.descripcion}</h3>
-                {/* <p onClick={()=>compra(users.id)}>{users.id}</p> */}
+                
                 <h3 style={{color : 'green'}}>{users.precio}</h3>
                 
                 

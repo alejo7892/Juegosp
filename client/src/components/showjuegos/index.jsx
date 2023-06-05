@@ -41,7 +41,7 @@ const Mostrarjuegos = () =>{
 <>
         <div class="containerLo">
         <nav>
-            <span class="logo">JUEGOSPICHA</span>
+            <span class="logo">JUEGOSPE</span>
             <ul>
                 <li
                 onClick={() => setForm("Inicio")}

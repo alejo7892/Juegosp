@@ -36,7 +36,7 @@ const Cjuegos =  () =>{
         <div className="containerLo">
         <div >
         <nav>
-              <span class="logo">JUEGOSPICHA</span>
+              <span class="logo">JUEGOSPE</span>
               <ul>
                   <li
                   onClick={() => setForm("Inicio")}
