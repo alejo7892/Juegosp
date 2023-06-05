@@ -67,7 +67,6 @@ const Cjuegos =  () =>{
           <br /><br />
             <input
               type="text"
-              id="imagen"
               required
               placeholder="ingrese la imagen por url"
               style={{

@@ -13,3 +13,9 @@ export const Crearjuegos = async(form) =>{
 export const catalogo = async() =>{
   return await axios.get('http://localhost:4000/catalogo')
 }
+export const misjuegos = async(params) =>{
+  return await axios.post('http://localhost:4000/misjuegos', params)
+}
+export const miscompras = async(params) =>{
+  return await axios.post('http://localhost:4000/miscompras', params)
+}
