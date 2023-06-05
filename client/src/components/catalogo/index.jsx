@@ -75,13 +75,14 @@ const Catalogo = () => {
         users.map((users,i)=>{
         
         return(
-         
+
         <div key={users.id} className="cards">
         <div   style={{display:'flex',}}>
                 <div  style={{border:'3px solid gray',width:'22%',height:'320%',padding:'10px',margin:'100px', position:'relative', top:'20px'}}>
                 <img src={users.imagen} alt="" style={{height: '40%',width:'40%'}} />
                 <h1 style={{color:'black'}}>{users.title}</h1> 
                 <h3>{users.descripcion}</h3>
+                {/* <p onClick={()=>compra(users.id)}>{users.id}</p> */}
                 <h3 style={{color : 'green'}}>{users.precio}</h3>
                 
                 
