@@ -61,7 +61,7 @@ export const misjuegos =  async (req, res) => {
   const {correoUs,id_juego}= req.body
   try {
     const [result] = await pool.query(
-      "INSERT INTO mis_juegos (correo_persona, id_juego) VALUES (?,?)", [correoUs,id_juego]
+      "INSERT INTO misjuegos (correo_persona, id_juego) VALUES (?,?)", [correoUs,id_juego]
     )
    return res.json(result)
   } catch (error) {
@@ -73,7 +73,7 @@ export const miscompras =  async (req, res) => {
 const {correoUs} = req.body
   try {
     const [result] = await pool.query(
-      "SELECT juegos.* FROM juegos,usuario,mis_juegos WHERE usuario.correo= mis_juegos.correo_persona AND juegos.id= mis_juegos.id_juego AND usuario.correo = ? ", [correoUs]
+      "SELECT juegos.* FROM juegos,usuario,misjuegos WHERE usuario.correo= misjuegos.correo_persona AND juegos.id= misjuegos.id_juego AND usuario.correo = ? ", [correoUs]
     )
    return res.json(result)
   } catch (error) {

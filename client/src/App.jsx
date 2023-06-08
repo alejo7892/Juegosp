@@ -22,9 +22,9 @@ function App() {
 
   switch (form) {
     case "Inicio":
-        return <div class="container">
+        return <div className="container">
         <nav>
-            <span class="logo">JUEGOSPICHA</span>
+            <span className="logo">JUEGOSPE</span>
             <ul>
                 <li
                 onClick={() => setForm("Inicio")}
@@ -46,7 +46,7 @@ function App() {
         <header>
             <h1>BIENVENIDOS</h1>
             <h2>Esto es juegos picha</h2>
-            <p>Donde prodras encontrar los ultimos juegos a un gran precio!!<br/><constantemente/></p>
+            <p>Donde prodras encontrar los ultimos juegos a un gran precio!!<br/></p>
             <button type="button">
                 Mas Informacion
             </button>
