@@ -46,9 +46,10 @@ export const crearjuegos = async(req,res) =>{
 
 }
 export const catalogo =  async (req, res) => {
+  const {correoUs} = req.body
   try {
     const [result] = await pool.query(
-      "SELECT * FROM juegos"
+      "SELECT *  FROM juegos WHERE id NOT IN (SELECT id_juego FROM mis_juegos WHERE correo_persona = ?)" , [correoUs]
     )
    return res.json(result)
   } catch (error) {

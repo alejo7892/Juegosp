@@ -9,7 +9,7 @@ const router = Router();
 router.post("/registro", registro)
 router.post("/iniciarsesion", login)
 router.post("/crearjuegos", crearjuegos)
-router.get("/catalogo", catalogo)
+router.post("/catalogo", catalogo)
 router.post("/misjuegos", misjuegos)
 router.post("/miscompras", miscompras)
 

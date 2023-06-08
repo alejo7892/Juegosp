@@ -10,8 +10,8 @@ export const Loginus = async(form) =>{
 export const Crearjuegos = async(form) =>{
   return await axios.post('http://localhost:4000/crearjuegos',form)
 }
-export const catalogo = async() =>{
-  return await axios.get('http://localhost:4000/catalogo')
+export const catalogo = async(params) =>{
+  return await axios.post('http://localhost:4000/catalogo', params)
 }
 export const misjuegos = async(params) =>{
   return await axios.post('http://localhost:4000/misjuegos', params)

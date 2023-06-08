@@ -26,9 +26,11 @@ const Catalogo = () => {
     useEffect(()=>{
 
         const listLoad=async()=>{
-           const response=await catalogo()
-           
-           setUsers(response.data)
+            const correoUs = cookie.get('NombreCookie')
+            const info = {correoUs: correoUs}
+        
+            const response = await catalogo(info)
+            setUsers(response.data);
 
         }
         
